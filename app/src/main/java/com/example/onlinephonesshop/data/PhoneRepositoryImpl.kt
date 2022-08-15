@@ -5,8 +5,9 @@ import com.example.onlinephonesshop.domain.entities.cartscreen.CartPhoneList
 import com.example.onlinephonesshop.domain.entities.detailscreen.DetailsPhoneList
 import com.example.onlinephonesshop.domain.entities.mainscreen.MainPhoneList
 import retrofit2.Response
+import javax.inject.Inject
 
-class PhoneRepositoryImpl: PhonesShopRepository {
+class PhoneRepositoryImpl @Inject constructor () : PhonesShopRepository {
     override suspend fun getMainList(): Response<MainPhoneList> {
         return ApiFactory.apiService.getMainList()
     }
