@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/category_item"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        app:cardBackgroundColor="@color/white"
+        android:elevation="12dp"
+        android:clickable="true"
+        app:cardCornerRadius="100dp">
+
+        <ImageView
+            android:id="@+id/category_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone_icon"
+            android:layout_gravity="center"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phones_category"
+        android:textColor="@color/dark_blue"
+        android:fontFamily="@font/mark_pro_medium"
+        android:layout_gravity="center_horizontal"
+        />
+</LinearLayout>

@@ -1,7 +1,9 @@
 package com.example.onlinephonesshop.data
 
+import com.example.onlinephonesshop.R
 import com.example.onlinephonesshop.domain.PhonesShopRepository
 import com.example.onlinephonesshop.domain.entities.cartscreen.CartPhoneList
+import com.example.onlinephonesshop.domain.entities.category.CategoryItem
 import com.example.onlinephonesshop.domain.entities.detailscreen.DetailsPhoneList
 import com.example.onlinephonesshop.domain.entities.mainscreen.MainPhoneList
 import retrofit2.Response
@@ -20,5 +22,22 @@ class PhoneRepositoryImpl @Inject constructor () : PhonesShopRepository {
        return ApiFactory.apiService.getCartList()
     }
 
-
+    override fun getCategory(): List<CategoryItem> = listOf(
+        CategoryItem(
+            icon = R.drawable.ic_phone_icon,
+            name = "Phones"
+        ),
+        CategoryItem(
+            icon = R.drawable.ic_computer_icon,
+            name = "Computer"
+        ),
+        CategoryItem(
+            icon = R.drawable.ic_heals_icon,
+            name = "Heals"
+        ),
+        CategoryItem(
+            icon = R.drawable.ic_books_icon,
+            name = "Books"
+        )
+    )
 }

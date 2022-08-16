@@ -1,5 +1,6 @@
 package com.example.onlinephonesshop.domain
 
+import com.example.onlinephonesshop.domain.entities.category.CategoryItem
 import com.example.onlinephonesshop.domain.entities.cartscreen.CartPhoneList
 import com.example.onlinephonesshop.domain.entities.detailscreen.DetailsPhoneList
 import com.example.onlinephonesshop.domain.entities.mainscreen.MainPhoneList
@@ -12,6 +13,8 @@ interface PhonesShopRepository {
     suspend fun getDetailList(): Response<DetailsPhoneList>
 
     suspend fun getCartList(): Response<CartPhoneList>
+
+    fun getCategory(): List<CategoryItem>
 
 
 }
