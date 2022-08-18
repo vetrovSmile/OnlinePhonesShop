@@ -10,4 +10,21 @@
     <string name="phones_category">Phones</string>
     <string name="search">Search</string>
     <string name="see_more">see more</string>
+    <string name="price_text">1047</string>
+    <string name="char_price">$</string>
+    <string name="sale_info_text"><strike> $1500 </strike></string>
+    <string name="phone_info_text">Samsung Galaxy s20 Ultra</string>
+    <string name="phone_image">Phone Image</string>
+    <string name="best_seller_text">Best Seller</string>
+    <string name="hot_sales_text">Hot Sales</string>
+    <string name="gps_location">gps location</string>
+    <string name="gps_location2">gps_location2</string>
+    <string name="qr_button">qr_button</string>
+    <string name="product_details">Product Details</string>
+    <string name="done_text">Done</string>
+    <string name="filter_options_text">Filter options</string>
+    <string name="close_filter">close_filter</string>
+    <string name="brand_text_filter">Brand</string>
+    <string name="filter_size_text">Size</string>
+    <string name="filter_price_size">Price</string>
 </resources>
