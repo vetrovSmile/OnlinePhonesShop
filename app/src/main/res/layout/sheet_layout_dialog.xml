@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sheet_details"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:elevation="2dp"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="270dp"
+    app:cardCornerRadius="35dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/NS_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="30dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp" />
+
+            <TextView
+                android:id="@+id/text_header_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/mark_pro_medium"
+                android:text="@string/galaxy_note_20_ultra"
+                android:textColor="@color/dark_blue"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/favorite_button_details"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/dark_blue"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_favorite_details_on"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/text_header_details"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/text_header_details" />
+
+            <RatingBar
+                android:id="@+id/ratingBar_details"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:rating="4.5"
+                android:stepSize="0.5"
+                android:theme="@style/MyRatingBar"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/text_header_details" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/ratingBar_details"
+                app:tabSelectedTextColor="@color/dark_blue"
+                app:tabTextAppearance="@style/MyCustomTextAppearance">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/shop" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/details" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/features" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/mark_pro_bold"
+                android:padding="14dp"
+                android:text="@string/add_to_cart_1_500_00"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/tab_layout_details" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.cardview.widget.CardView>

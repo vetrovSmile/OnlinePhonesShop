@@ -27,4 +27,22 @@
     <string name="brand_text_filter">Brand</string>
     <string name="filter_size_text">Size</string>
     <string name="filter_price_size">Price</string>
+    <string name="shop">Shop</string>
+    <string name="details">Details</string>
+    <string name="features">Features</string>
+    <string name="no_data_available">no data available</string>
+    <string name="add_to_cart_1_500_00">Add to Cart $1,500.00</string>
+    <string name="exynos_990">Exynos 990</string>
+    <string name="_108_12_mp">108 + 12 mp</string>
+    <string name="_8_gb">8 GB</string>
+    <string name="_256_gb">256 GB</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="basket">basket</string>
+    <string name="account">account</string>
+    <string name="favorite">favorite</string>
+    <string name="ellipse">ellipse</string>
+    <string name="button_back">button_back</string>
+    <string name="sort_button">sort_button</string>
+    <string name="galaxy_note_20_ultra">Galaxy Note 20 Ultra</string>
+    <string name="_128_gb">128 gb</string>
 </resources>

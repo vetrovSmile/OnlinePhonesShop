@@ -12,5 +12,6 @@
     <color name="transparent">#00000000</color>
     <color name="gray">#9A9A9A</color>
     <color name="background_screen">#F8F8F8</color>
+    <color name="braun">#772D03</color>
 
 </resources>

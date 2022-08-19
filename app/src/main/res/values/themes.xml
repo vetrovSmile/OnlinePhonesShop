@@ -17,4 +17,34 @@
     <style name="ProgressBarColor">
         <item name="colorAccent">@color/peach</item>
     </style>
+
+    <style name="MyRatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">#FFC107</item>
+        <item name="minHeight">16dp</item>
+        <item name="maxHeight">16dp</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="fontFamily">@font/mark_pro_bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="MyButtonColorBraun" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/MaterialBraunButtonThemeOverlay</item>
+    </style>
+
+    <style name="MaterialBraunButtonThemeOverlay">
+        <item name="colorPrimary">@color/braun</item>
+    </style>
+
+    <style name="MyButtonColorDarkBlue" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/MaterialBlueButtonThemeOverlay</item>
+    </style>
+
+    <style name="MaterialBlueButtonThemeOverlay">
+        <item name="colorPrimary">@color/dark_blue</item>
+    </style>
+
 </resources>

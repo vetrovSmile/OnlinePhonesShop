@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_phone_item"
     android:layout_width="170dp"
     android:layout_height="wrap_content"
-    android:id="@+id/cardView_phone_item"
     android:clickable="true"
     android:elevation="2dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="12dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,8 +18,8 @@
             android:id="@+id/image_phone"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:scaleType="centerCrop"
             android:contentDescription="@string/phone_image"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -65,9 +65,9 @@
             android:text="@string/sale_info_text"
             android:textColor="@color/gray"
             android:textSize="10sp"
-            tools:ignore="SmallSp"
             app:layout_constraintBottom_toBottomOf="@+id/price_info"
-            app:layout_constraintStart_toEndOf="@+id/price_info" />
+            app:layout_constraintStart_toEndOf="@+id/price_info"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/phone_info"
@@ -80,12 +80,11 @@
             android:text="@string/phone_info_text"
             android:textColor="@color/dark_blue"
             android:textSize="10sp"
-            tools:ignore="SmallSp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price_info" />
-
+            app:layout_constraintTop_toBottomOf="@+id/price_info"
+            tools:ignore="SmallSp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
