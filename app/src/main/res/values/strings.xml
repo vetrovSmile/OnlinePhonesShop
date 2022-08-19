@@ -45,4 +45,18 @@
     <string name="sort_button">sort_button</string>
     <string name="galaxy_note_20_ultra">Galaxy Note 20 Ultra</string>
     <string name="_128_gb">128 gb</string>
+    <string name="add_address">Add address</string>
+    <string name="my_cart">My Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="delivery">Delivery</string>
+    <string name="total">Total</string>
+    <string name="free">Free</string>
+    <string name="_6_000">6,000</string>
+    <string name="char_cost">$</string>
+    <string name="us">us</string>
+    <string name="_6000_00">$6000.00</string>
+    <string name="_2">2</string>
+    <string name="delete_button">delete_button</string>
+    <string name="minus">minus</string>
+    <string name="plus">plus</string>
 </resources>

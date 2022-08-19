@@ -13,5 +13,6 @@
     <color name="gray">#9A9A9A</color>
     <color name="background_screen">#F8F8F8</color>
     <color name="braun">#772D03</color>
+    <color name="gray_dark">#282843</color>
 
 </resources>
