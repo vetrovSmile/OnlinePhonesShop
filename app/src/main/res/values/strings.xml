@@ -59,4 +59,9 @@
     <string name="delete_button">delete_button</string>
     <string name="minus">minus</string>
     <string name="plus">plus</string>
+    <string name="iphone_12">Iphone 12</string>
+    <string name="s_per_mega_r_pido">Súper. Mega. Rápido.</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="new_phone">new phone</string>
+    <string name="shadow">shadow</string>
 </resources>

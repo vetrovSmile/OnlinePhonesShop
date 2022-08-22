@@ -18,6 +18,7 @@ class MainFragment : Fragment() {
 
     private lateinit var binding: FragmentMainBinding
     private lateinit var viewModal: ViewModalMainFragment
+    private lateinit var categoryAdapter: CategoryAdapter
 
     @Inject
     lateinit var viewModalFactory: ViewModalFactoryFragment
@@ -44,5 +45,18 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initCategoryRv()
+        viewModal.getListCategory()
+
+        viewModal.category.observe(viewLifecycleOwner){
+            categoryAdapter.listCategory = it
+        }
+    }
+
+    private fun initCategoryRv(){
+        val categoryRv = binding.recyclerViewCategory
+        categoryAdapter = CategoryAdapter()
+        categoryRv.adapter = categoryAdapter
+
     }
 }
