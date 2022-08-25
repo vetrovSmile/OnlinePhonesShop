@@ -16,26 +16,31 @@ import javax.inject.Inject
 class ViewModalMainFragment @Inject constructor(
     private val getMainListDtoUseCase: GetMainListDtoUseCase,
     private val getCategoryItemUseCase: GetCategoryItemUseCase
-) : ViewModel(){
+) : ViewModel() {
 
     private val _getResponseMain = MutableLiveData<Response<MainPhoneList>>()
-    val getResponseMain:  LiveData<Response<MainPhoneList>> = _getResponseMain
+    val getResponseMainValue: LiveData<Response<MainPhoneList>> = _getResponseMain
 
     private val _category = MutableLiveData<List<CategoryItem>>()
-    val category:LiveData<List<CategoryItem>> = _category
+    val category: LiveData<List<CategoryItem>> = _category
 
-    fun getListCategory(){
+    fun getListCategory() {
         _category.postValue(getCategoryItemUseCase.invoke())
 
     }
 
-    fun getResponseMain(){
+    fun getResponseMain() {
         viewModelScope.launch {
-            val responsePhoneList = getMainListDtoUseCase.invoke()
-            _getResponseMain.value = responsePhoneList
-            Log.d("ViewModalMainFragment", "$responsePhoneList")
+
+            try {
+                val responsePhoneList = getMainListDtoUseCase.invoke()
+                _getResponseMain.value = responsePhoneList
+                Log.d("ViewModalMainFragment", "$responsePhoneList")
+            } catch (e: Exception) {
+
+            }
+
         }
     }
-
 
 }

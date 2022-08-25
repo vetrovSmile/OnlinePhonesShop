@@ -5,7 +5,7 @@
     android:id="@+id/filter_main_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:cardCornerRadius="40dp">
+    app:cardCornerRadius="20dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -64,4 +64,24 @@
     <string name="buy_now">Buy now!</string>
     <string name="new_phone">new phone</string>
     <string name="shadow">shadow</string>
+    <string name="textview">TextView</string>
+
+
+    <string-array name="brand_array">
+        <item> Samsung </item>
+        <item>Apple</item>
+        <item>Xiaomi</item>
+    </string-array>
+
+    <string-array name="price_array">
+        <item>$0-$300</item>
+        <item>$300-$700</item>
+        <item>$700-$1000</item>
+    </string-array>
+
+    <string-array name="size_array">
+        <item>4.5 to 5.5 inches</item>
+        <item>5.5 to 6.0 inches</item>
+        <item>6.0 to 6.8 inches</item>
+    </string-array>
 </resources>

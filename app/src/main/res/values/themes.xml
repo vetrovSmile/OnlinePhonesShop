@@ -47,4 +47,14 @@
         <item name="colorPrimary">@color/dark_blue</item>
     </style>
 
+    <style name="BottomSheetDialogFilter" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">@color/transparent</item>
+    </style>
+
+
+
 </resources>
