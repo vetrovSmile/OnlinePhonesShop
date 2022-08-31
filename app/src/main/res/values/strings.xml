@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="explorer_title">Explorer</string>
-    <string name="count_text">0</string>
+    <string name="count_text">2</string>
     <string name="location_text">Zihuatanejo, Gro</string>
     <string name="select_category">Select Category</string>
     <string name="view_all">view all</string>
@@ -55,7 +55,7 @@
     <string name="char_cost">$</string>
     <string name="us">us</string>
     <string name="_6000_00">$6000.00</string>
-    <string name="_2">2</string>
+    <string name="_2">1</string>
     <string name="delete_button">delete_button</string>
     <string name="minus">minus</string>
     <string name="plus">plus</string>
@@ -65,6 +65,7 @@
     <string name="new_phone">new phone</string>
     <string name="shadow">shadow</string>
     <string name="textview">TextView</string>
+    <string name="shop_text">Shop</string>
 
 
     <string-array name="brand_array">

@@ -53,7 +53,7 @@ class BestSellerAdapter :
         holder.priceWithDiscount.text = getBestSeller.discount_price.toString()
         holder.priceWithoutDiscount.text = getBestSeller.price_without_discount.toString()
         holder.phoneInfoBestSeller.text = getBestSeller.title
-        Glide.with(holder.phoneImageBestSeller.context).load(getBestSeller.picture)
+        Glide.with(holder.itemView.context).load(getBestSeller.picture)
             .into(holder.phoneImageBestSeller)
         holder.cardPhoneBestSeller.setOnClickListener {
 

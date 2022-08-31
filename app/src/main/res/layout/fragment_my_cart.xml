@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.cartfragment.MyCartFragment">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -70,10 +71,12 @@
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/back_Button_bascet" />
 
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/background_basket"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +112,7 @@
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/checkout_button_background"
                 android:fontFamily="@font/mark_pro_bold"
-                android:padding="12dp"
+                android:padding="10dp"
                 android:text="@string/checkout"
                 android:textAllCaps="false"
                 android:textSize="20sp"
@@ -175,17 +178,20 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="60dp"
-                android:layout_marginEnd="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/line_top"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/basket_item" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 </FrameLayout>

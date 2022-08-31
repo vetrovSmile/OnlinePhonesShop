@@ -13,6 +13,7 @@
         android:id="@+id/image_phone_basket"
         android:layout_width="90dp"
         android:layout_height="90dp"
+        android:scaleType="centerCrop"
         android:contentDescription="@string/phone_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -63,7 +64,6 @@
         android:background="@drawable/background_count_basket"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/delete_product_button"
         app:layout_constraintStart_toEndOf="@+id/name_phone_basket"
         app:layout_constraintTop_toTopOf="parent">
 

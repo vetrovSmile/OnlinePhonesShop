@@ -95,6 +95,7 @@
             android:fontFamily="@font/mark_pro_medium"
             android:text="@string/count_text"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="9sp"
             app:layout_constraintBottom_toTopOf="@+id/shop_icon"
             app:layout_constraintStart_toEndOf="@+id/shop_icon"
