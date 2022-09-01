@@ -1,28 +1,24 @@
 package com.example.onlinephonesshop.presentation.cartfragment
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.onlinephonesshop.R
 import com.example.onlinephonesshop.domain.entities.cartscreen.Basket
-import com.example.onlinephonesshop.presentation.mainfragment.CategoryAdapter
 
-class CartFragmentAdapter : RecyclerView.Adapter<CartFragmentAdapter.CartViewHolder>(){
+class CartFragmentAdapter : RecyclerView.Adapter<CartFragmentAdapter.CartViewHolder>() {
 
-    var total = 0
-    var list = listOf<Basket>()
-    set(value){
-        field = value
-        notifyDataSetChanged()
+    var list: MutableList<Basket> = ArrayList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
 
-    }
+        }
 
 
     inner class CartViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -35,20 +31,6 @@ class CartFragmentAdapter : RecyclerView.Adapter<CartFragmentAdapter.CartViewHol
         val countItem: TextView = itemView.findViewById(R.id.count_basket)
         val totalPrice: TextView = itemView.findViewById(R.id.cost_phone)
         val deleteItem: ImageButton = itemView.findViewById(R.id.delete_product_button)
-
-
-//        init {
-//            for (i in  0 until list.size){
-//
-//                total += list[i].price
-//
-//                Log.d("hello", "$total")
-//            }
-//
-//        }
-
-
-
 
     }
 
@@ -84,6 +66,11 @@ class CartFragmentAdapter : RecyclerView.Adapter<CartFragmentAdapter.CartViewHol
                 holder.countItem.text = countPlus.toString()
 
             }
+        }
+
+        holder.deleteItem.setOnClickListener {
+            list.removeAt(holder.adapterPosition)
+            notifyItemRemoved(holder.adapterPosition)
         }
 
     }

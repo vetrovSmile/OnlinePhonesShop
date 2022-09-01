@@ -65,7 +65,7 @@ class MyCartFragment : Fragment() {
             if (response.isSuccessful) {
                 response.body()?.let {
                     val basketList = it.basket
-                    cartAdapter.list = basketList
+                    cartAdapter.list = basketList.toMutableList()
                     binding.costText.text = it.total.toDouble().toString()
                 }
             }

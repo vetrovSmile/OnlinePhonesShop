@@ -1,14 +1,11 @@
 package com.example.onlinephonesshop.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
 import com.example.onlinephonesshop.R
 import com.example.onlinephonesshop.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,12 +25,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.shopIcon.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_myCartFragment)
+            navController.navigate(R.id.myCartFragment)
         }
 
-
     }
-
-
 
 }
