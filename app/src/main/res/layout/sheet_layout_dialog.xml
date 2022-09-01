@@ -68,9 +68,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:rating="4.5"
+                android:rating="4.0"
                 android:stepSize="0.5"
                 android:theme="@style/MyRatingBar"
+                android:isIndicator="false"
                 app:layout_constraintStart_toStartOf="@+id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/text_header_details" />
 
@@ -84,7 +85,6 @@
                 app:layout_constraintTop_toBottomOf="@id/ratingBar_details"
                 app:tabSelectedTextColor="@color/dark_blue"
                 app:tabTextAppearance="@style/MyCustomTextAppearance">
-
 
 
             </com.google.android.material.tabs.TabLayout>
@@ -101,7 +101,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tab_layout_details" />
 
 
-
             <Button
                 android:id="@+id/button_add_cart"
                 android:layout_width="0dp"
@@ -114,8 +113,7 @@
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                 />
+                app:layout_constraintStart_toStartOf="@id/guideline1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

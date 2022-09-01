@@ -212,10 +212,10 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <include
-        android:id="@+id/progress_bar_load"
-        layout="@layout/progress_bar"
-        android:visibility="invisible" />
+    <include layout="@layout/progress_layout"
+        android:id="@+id/progress_bar"
+        android:visibility="invisible"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

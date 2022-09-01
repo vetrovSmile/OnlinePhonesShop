@@ -111,7 +111,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/color_shape"
-        app:icon="@drawable/ic_select_icon"
+        app:icon="@drawable/ic_select_icon_on"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,10 +124,9 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/color_shape"
-        app:icon="@drawable/ic_select_icon"
+
         app:iconGravity="textStart"
         app:iconPadding="0dp"
-        app:iconTint="@color/transparent"
         app:layout_constraintBottom_toBottomOf="@+id/button_color_braun"
         app:layout_constraintStart_toEndOf="@+id/button_color_braun"
         app:layout_constraintTop_toTopOf="@+id/button_color_braun" />

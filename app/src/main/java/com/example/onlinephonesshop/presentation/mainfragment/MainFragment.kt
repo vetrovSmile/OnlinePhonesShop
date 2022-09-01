@@ -2,19 +2,13 @@ package com.example.onlinephonesshop.presentation.mainfragment
 
 import android.content.Context
 import android.os.Bundle
-import android.text.AutoText
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.ImageButton
+import android.widget.*
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.onlinephonesshop.R
 import com.example.onlinephonesshop.databinding.FragmentMainBinding
 import com.example.onlinephonesshop.presentation.ApplicationApp
@@ -37,6 +31,7 @@ class MainFragment : Fragment() {
     private lateinit var closeBottomSheet: ImageButton
     private lateinit var doneButtonSheet: Button
     private lateinit var sheetBottomDialogView: View
+    private lateinit var progressBarMain: FrameLayout
 
     @Inject
     lateinit var viewModalFactory: ViewModalFactoryFragment
@@ -65,20 +60,27 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initCategoryRv()
         bottomSheetInit()
+        observeViewModal()
+
+    }
+
+    private fun observeViewModal() {
+
         viewModal.getListCategory()
         viewModal.getResponseMain()
 
-        binding.sortButton.setOnClickListener {
-            sheetBottomDialog.show()
-        }
+        progressBarMain = requireActivity().findViewById(R.id.progress_bar)
+        progressBarMain.visibility = View.VISIBLE
 
+        viewModal.viewStateMain.observe(viewLifecycleOwner) {
+            if (it.isDownload) progressBarMain.visibility = View.INVISIBLE
+        }
 
         viewModal.category.observe(viewLifecycleOwner) {
             categoryAdapter.listCategory = it
         }
 
         viewModal.getResponseMainValue.observe(viewLifecycleOwner) { response ->
-
             if (response.isSuccessful) {
                 response.body()?.let {
                     val responseHome = it.home_store
@@ -86,9 +88,11 @@ class MainFragment : Fragment() {
                     homeAdapter.submitList(responseHome)
                     bestSellerAdapter.submitList(responseBestSeller)
                 }
+
             }
 
         }
+
     }
 
     private fun bottomSheetInit() {
@@ -113,7 +117,7 @@ class MainFragment : Fragment() {
         val brandArray = resources.getStringArray(R.array.brand_array)
         val priceArray = resources.getStringArray(R.array.price_array)
         val sizeArray = resources.getStringArray(R.array.size_array)
-//
+
         brandAutoComplete.setAdapter(
             ArrayAdapter(
                 requireActivity(),
@@ -135,6 +139,10 @@ class MainFragment : Fragment() {
                 sizeArray
             )
         )
+
+        binding.sortButton.setOnClickListener {
+            sheetBottomDialog.show()
+        }
 
 
     }

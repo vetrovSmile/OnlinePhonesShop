@@ -187,6 +187,10 @@
                 tools:listitem="@layout/basket_item" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <include layout="@layout/progress_layout"
+            android:id="@+id/progress_bar_cart"
+            android:visibility="invisible"/>
+
 
 
 

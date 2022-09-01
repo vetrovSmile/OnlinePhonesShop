@@ -19,7 +19,7 @@
     </style>
 
     <style name="MyRatingBar" parent="Theme.AppCompat">
-        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/darker_gray</item>
         <item name="colorControlActivated">#FFC107</item>
         <item name="minHeight">16dp</item>
         <item name="maxHeight">16dp</item>

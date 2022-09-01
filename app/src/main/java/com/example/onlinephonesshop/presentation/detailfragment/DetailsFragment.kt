@@ -1,14 +1,12 @@
 package com.example.onlinephonesshop.presentation.detailfragment
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.FrameLayout
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
@@ -20,7 +18,6 @@ import com.example.onlinephonesshop.presentation.detailfragment.tabItem.DetailsT
 import com.example.onlinephonesshop.presentation.detailfragment.tabItem.FeaturesTabLayoutFragment
 import com.example.onlinephonesshop.presentation.detailfragment.tabItem.ShopTabLayoutFragment
 import com.example.onlinephonesshop.presentation.detailfragment.tabItem.TabDetailsAdapter
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -32,10 +29,10 @@ class DetailsFragment : Fragment() {
     private lateinit var viewModal: ViewModalDetailFragment
     private lateinit var detailsPhotoAdapter: DetailAdapter
     private lateinit var favoriteButton: MaterialButton
-
+    private lateinit var progressBarDetails: FrameLayout
     private lateinit var tabLayoutDetails: TabLayout
     private lateinit var viewPagerTabDetail: ViewPager2
-    var isFavorite = false
+    private var isFavorite = false
 
 
     @Inject
@@ -63,25 +60,35 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        observeDetailViewModal()
         initRv()
         initTabLayoutDetails()
         initFavoriteButton()
-
         initNavigateButton()
+
+    }
+
+    private fun observeDetailViewModal() {
+
         viewModal.getDetailListInfo()
+
+        progressBarDetails = requireActivity().findViewById(R.id.progress_bar_detail)
+        progressBarDetails.visibility = View.VISIBLE
+
+        viewModal.viewStateMain.observe(viewLifecycleOwner) {
+            if (it.isDownload) progressBarDetails.visibility = View.INVISIBLE
+        }
+
         viewModal.getDetailList.observe(viewLifecycleOwner) { response ->
             if (response.isSuccessful) {
                 response.body()?.let {
                     val toList = listOf(it)
-
                     detailsPhotoAdapter.submitList(toList)
-
                 }
 
             }
 
         }
-
     }
 
     private fun initTabLayoutDetails() {
@@ -131,11 +138,10 @@ class DetailsFragment : Fragment() {
             isFavorite = if (isFavorite) {
                 favoriteButton.setIconResource(R.drawable.ic_favorite_details_on)
                 false
-            }else{
+            } else {
                 favoriteButton.setIconResource(R.drawable.ic_favorite_details_off)
                 true
             }
-
 
         }
 
