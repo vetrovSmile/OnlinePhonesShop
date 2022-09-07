@@ -17,21 +17,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="16dp" />
+            app:layout_constraintGuide_end="@dimen/margin_16" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="16dp" />
+            app:layout_constraintGuide_begin="@dimen/margin_16" />
 
         <ImageButton
             android:id="@+id/button_close_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_24"
             android:background="@color/transparent"
             android:contentDescription="@string/close_filter"
             app:layout_constraintStart_toStartOf="@+id/guideline_1"
@@ -42,11 +42,11 @@
             android:id="@+id/button_done_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/margin_8"
             android:fontFamily="@font/mark_pro_medium"
             android:text="@string/done_text"
             android:textAllCaps="false"
-            android:textSize="16sp"
+            android:textSize="@dimen/text_size_16"
             app:layout_constraintBottom_toBottomOf="@+id/button_close_filter"
             app:layout_constraintEnd_toStartOf="@+id/guideline_2"
             app:layout_constraintTop_toTopOf="@+id/button_close_filter" />
@@ -58,7 +58,7 @@
             android:fontFamily="@font/mark_pro_medium"
             android:text="@string/filter_options_text"
             android:textColor="@color/dark_blue"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_size_18"
             app:layout_constraintBottom_toBottomOf="@+id/button_close_filter"
             app:layout_constraintEnd_toStartOf="@+id/button_done_filter"
             app:layout_constraintStart_toEndOf="@+id/button_close_filter"
@@ -67,7 +67,7 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/margin_8"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/guideline_2"
             app:layout_constraintStart_toStartOf="@+id/guideline_1"
@@ -75,8 +75,8 @@
 
             <TextView
                 style="@style/filter_title_style"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginBottom="@dimen/margin_6"
                 android:text="@string/brand_text_filter" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -94,14 +94,14 @@
                     android:fontFamily="@font/mark_pro_regular"
                     android:inputType="none"
                     android:textColor="@color/dark_blue"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size_18"
                     tools:ignore="LabelFor" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 style="@style/filter_title_style"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="@dimen/margin_14"
+                android:layout_marginBottom="@dimen/margin_6"
                 android:text="@string/filter_price_size" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -119,15 +119,15 @@
                     android:fontFamily="@font/mark_pro_regular"
                     android:inputType="none"
                     android:textColor="@color/dark_blue"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size_18"
                     tools:ignore="LabelFor" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <TextView
                 style="@style/filter_title_style"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="6dp"
+                android:layout_marginTop="@dimen/margin_14"
+                android:layout_marginBottom="@dimen/margin_6"
                 android:text="@string/filter_size_text" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -145,7 +145,7 @@
                     android:fontFamily="@font/mark_pro_regular"
                     android:inputType="none"
                     android:textColor="@color/dark_blue"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size_18"
                     tools:ignore="LabelFor" />
             </com.google.android.material.textfield.TextInputLayout>
 

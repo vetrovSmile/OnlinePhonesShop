@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="16dp"
+    android:layout_marginTop="@dimen/margin_20"
+    android:layout_marginBottom="@dimen/margin_16"
     android:background="@color/dark_blue">
 
 
@@ -30,7 +30,7 @@
         android:maxLines="2"
         android:text="@string/galaxy_note_20_ultra"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18"
         app:layout_constraintStart_toEndOf="@+id/image_phone_basket"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:fontFamily="@font/mark_pro_bold"
         android:text="@string/_6000_00"
         android:textColor="@color/peach"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_size_18"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/name_phone_basket"
         app:layout_constraintTop_toBottomOf="@+id/name_phone_basket" />
@@ -50,7 +50,7 @@
         android:id="@+id/delete_product_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:background="@color/transparent"
         android:contentDescription="@string/delete_button"
         android:src="@drawable/ic_remove_basket"
@@ -85,7 +85,7 @@
             android:fontFamily="@font/mark_pro_bold"
             android:text="@string/_2"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="@dimen/text_size_18" />
 
         <ImageButton
             android:id="@+id/button_plus"

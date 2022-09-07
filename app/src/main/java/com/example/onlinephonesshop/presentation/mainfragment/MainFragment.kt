@@ -32,6 +32,8 @@ class MainFragment : Fragment() {
     private lateinit var doneButtonSheet: Button
     private lateinit var sheetBottomDialogView: View
     private lateinit var progressBarMain: FrameLayout
+    private lateinit var errorLayout: FrameLayout
+    private lateinit var retry: Button
 
     @Inject
     lateinit var viewModalFactory: ViewModalFactoryFragment
@@ -58,10 +60,21 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        initView(view)
+        showProgressBar()
         initCategoryRv()
         bottomSheetInit()
         observeViewModal()
 
+
+
+    }
+
+    private fun initView(view: View) {
+        progressBarMain = view.findViewById(R.id.progress_bar)
+        errorLayout = view.findViewById(R.id.error_layout_main)
+        retry = view.findViewById(R.id.button_try)
     }
 
     private fun observeViewModal() {
@@ -69,11 +82,11 @@ class MainFragment : Fragment() {
         viewModal.getListCategory()
         viewModal.getResponseMain()
 
-        progressBarMain = requireActivity().findViewById(R.id.progress_bar)
-        progressBarMain.visibility = View.VISIBLE
-
         viewModal.viewStateMain.observe(viewLifecycleOwner) {
-            if (it.isDownload) progressBarMain.visibility = View.INVISIBLE
+            if (it.isDownload) {
+                hideProgressBar()
+            } else if (it.e != null) showException()
+
         }
 
         viewModal.category.observe(viewLifecycleOwner) {
@@ -81,14 +94,11 @@ class MainFragment : Fragment() {
         }
 
         viewModal.getResponseMainValue.observe(viewLifecycleOwner) { response ->
-            if (response.isSuccessful) {
-                response.body()?.let {
-                    val responseHome = it.home_store
-                    val responseBestSeller = it.best_seller
-                    homeAdapter.submitList(responseHome)
-                    bestSellerAdapter.submitList(responseBestSeller)
-                }
-
+            response.body()?.let {
+                val responseHome = it.home_store
+                val responseBestSeller = it.best_seller
+                homeAdapter.submitList(responseHome)
+                bestSellerAdapter.submitList(responseBestSeller)
             }
 
         }
@@ -167,5 +177,23 @@ class MainFragment : Fragment() {
         }
 
 
+    }
+
+    private fun showProgressBar() {
+        progressBarMain.visibility = View.VISIBLE
+
+    }
+
+    private fun hideProgressBar() {
+        progressBarMain.visibility = View.INVISIBLE
+
+    }
+
+    private fun showException() {
+        errorLayout.visibility = View.VISIBLE
+        retry.setOnClickListener {
+            viewModal.getResponseMain()
+            errorLayout.visibility = View.INVISIBLE
+        }
     }
 }

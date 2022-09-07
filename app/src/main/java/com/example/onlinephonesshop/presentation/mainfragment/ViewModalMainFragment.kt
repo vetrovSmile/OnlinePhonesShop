@@ -9,6 +9,7 @@ import com.example.onlinephonesshop.domain.entities.mainscreen.MainPhoneList
 import com.example.onlinephonesshop.domain.entities.stateview.StateView
 import com.example.onlinephonesshop.domain.usecases.GetCategoryItemUseCase
 import com.example.onlinephonesshop.domain.usecases.GetMainListDtoUseCase
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import javax.inject.Inject
@@ -17,6 +18,10 @@ class ViewModalMainFragment @Inject constructor(
     private val getMainListDtoUseCase: GetMainListDtoUseCase,
     private val getCategoryItemUseCase: GetCategoryItemUseCase
 ) : ViewModel() {
+
+    private val errorHandlerMain = CoroutineExceptionHandler { _, error ->
+        _viewStateMain.value = StateView(e = error)
+    }
 
     private val _getResponseMain = MutableLiveData<Response<MainPhoneList>>()
     val getResponseMainValue: LiveData<Response<MainPhoneList>> = _getResponseMain
@@ -33,16 +38,14 @@ class ViewModalMainFragment @Inject constructor(
     }
 
     fun getResponseMain() {
-        viewModelScope.launch {
+        viewModelScope.launch(errorHandlerMain) {
 
-            try {
-                val responsePhoneList = getMainListDtoUseCase.invoke()
+            val responsePhoneList = getMainListDtoUseCase.invoke()
+            if (responsePhoneList.isSuccessful) {
                 _getResponseMain.value = responsePhoneList
                 _viewStateMain.value = StateView(true)
-
-            } catch (e: Exception) {
-
             }
+
 
         }
     }

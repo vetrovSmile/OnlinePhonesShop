@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -22,6 +23,8 @@ class MyCartFragment : Fragment() {
     private lateinit var viewModal: ViewModalCartFragment
     private lateinit var cartAdapter: CartFragmentAdapter
     private lateinit var progressBarCart: FrameLayout
+    private lateinit var errorCart: FrameLayout
+    private lateinit var retryCart: Button
 
     @Inject
     lateinit var viewModalFactory: ViewModalFactoryFragment
@@ -46,30 +49,35 @@ class MyCartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView(view)
+        showProgressBar()
         initButtonBack()
         observerResponseCart()
         initCartRv()
 
     }
 
+    private fun initView(view: View) {
+        errorCart = view.findViewById(R.id.error_layout_cart)
+        retryCart = view.findViewById(R.id.button_try)
+        progressBarCart = requireActivity().findViewById(R.id.progress_bar_cart)
+    }
+
     private fun observerResponseCart() {
 
         viewModal.getBasketItem()
-        progressBarCart = requireActivity().findViewById(R.id.progress_bar_cart)
-        progressBarCart.visibility = View.VISIBLE
+
         viewModal.viewStateCart.observe(viewLifecycleOwner) {
-            if (it.isDownload) progressBarCart.visibility = View.INVISIBLE
+            if (it.isDownload) hideProgressBar()
+            else if (it.e != null) showException()
         }
         viewModal.basketItemResponse.observe(viewLifecycleOwner) { response ->
 
-            if (response.isSuccessful) {
-                response.body()?.let {
-                    val basketList = it.basket
-                    cartAdapter.list = basketList.toMutableList()
-                    binding.costText.text = it.total.toDouble().toString()
-                }
+            response.body()?.let {
+                val basketList = it.basket
+                cartAdapter.list = basketList.toMutableList()
+                binding.costText.text = it.total.toDouble().toString()
             }
-
         }
 
     }
@@ -84,6 +92,27 @@ class MyCartFragment : Fragment() {
         binding.backButtonBascet.setOnClickListener {
             findNavController().navigate(R.id.action_myCartFragment_to_detailsFragment)
         }
+    }
+
+    private fun showProgressBar() {
+        progressBarCart.visibility = View.VISIBLE
+
+
+    }
+
+    private fun hideProgressBar() {
+        progressBarCart.visibility = View.INVISIBLE
+
+
+    }
+
+    private fun showException() {
+        errorCart.visibility = View.VISIBLE
+        retryCart.setOnClickListener {
+            viewModal.getBasketItem()
+            errorCart.visibility = View.INVISIBLE
+        }
+
     }
 
 }

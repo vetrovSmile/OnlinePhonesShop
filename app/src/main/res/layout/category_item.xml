@@ -8,7 +8,7 @@
         android:id="@+id/category_item_card"
         android:layout_width="71dp"
         android:layout_height="71dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/margin_20"
         android:clickable="true"
         android:elevation="1dp"
         app:cardBackgroundColor="@color/white"

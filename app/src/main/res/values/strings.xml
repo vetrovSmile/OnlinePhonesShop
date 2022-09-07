@@ -66,6 +66,9 @@
     <string name="shadow">shadow</string>
     <string name="textview">TextView</string>
     <string name="shop_text">Shop</string>
+    <string name="oops">Oops!</string>
+    <string name="your_internet_">Please check your internet settings and try again!</string>
+    <string name="try_again">Try again</string>
 
 
     <string-array name="brand_array">

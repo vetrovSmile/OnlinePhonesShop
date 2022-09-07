@@ -2,10 +2,10 @@
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/textview"
     android:fontFamily="@font/mark_pro_regular"
-    android:textSize="18sp"
-    android:padding="16dp"
-    android:textColor="@color/dark_blue">
+    android:padding="@dimen/margin_16"
+    android:text="@string/textview"
+    android:textColor="@color/dark_blue"
+    android:textSize="@dimen/text_size_18">
 
 </TextView>
