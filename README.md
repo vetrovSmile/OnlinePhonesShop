@@ -1,5 +1,5 @@
 # OnlinePhonesShop
-The OnlinePhoneShop mobile application is built on the basis of Solid principles using the MVVM design pattern and a stack of modern technologies.
+The OnlinePhoneShop mobile application is built on the basis of Solid principles using the MVVM design pattern and a stack of modern technologies.The application does not implement the logic of many components. The application was created to train the skill of creating UI screens.
 
 ## Libraries
 + MVVM Architecture
